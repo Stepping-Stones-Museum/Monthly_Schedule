@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Museum Schedule Viewer</title>
+    <link href="style.css" rel="stylesheet" />
+    <script defer src="script.js" rel="script"></script>
+    <script defer src="monthlyView.js" rel="script"></script>
+  </head>
+  <body>
+    <div class="desktop-container" id="view-toggle">
+      <button class="choose-calendar-view-btn">Daily</button>
+      <button class="choose-calendar-view-btn">Monthly</button>
+    </div>
+    <section class="monthly-calendar-section">
+      <div class="calendar-header">
+        <button id="prevMonth">◀</button>
+        <h2 id="monthLabel"></h2>
+        <button id="nextMonth">▶</button>
+      </div>
+
+      <div class="weekday-labels">
+        <div>Sunday</div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+        <div>Saturday</div>
+      </div>
+      <div class="calendar" id="calendar"></div>
+    </section>
+
+    <section class="daily-calendar-section">
+      <div class="dropdown-nav-container">
+        <nav
+          class="dropdown-nav-container month-dropdown w-dropdown-list"
+          id="w-dropdown-list-0"
+          aria-labelledby="w-dropdown-toggle-0"
+        >
+          <a
+            button-value="09"
+            href="#"
+            class="single-date-dropdown-btn w-button"
+            tabindex="0"
+            >September</a
+          >
+          <a
+            button-value="10"
+            href="#"
+            class="single-date-dropdown-btn w-button"
+            tabindex="0"
+            >October</a
+          >
+          <a
+            button-value="11"
+            href="#"
+            class="single-date-dropdown-btn w-button"
+            tabindex="0"
+            >November</a
+          >
+          <a
+            button-value="12"
+            href="#"
+            class="single-date-dropdown-btn w-button"
+            tabindex="0"
+            >December</a
+          >
+          <a
+            button-value="01"
+            href="#"
+            class="single-date-dropdown-btn w-button"
+            tabindex="0"
+            >January</a
+          >
+          <a
+            button-value="02"
+            href="#"
+            class="single-date-dropdown-btn w-button"
+            tabindex="0"
+            >February</a
+          >
+        </nav>
+      </div>
+      <section class="toggle-containers-section">
+        <div class="desktop-container" id="week-toggle">
+          <button class="choose-day-program-desktop-btn" btn-value="02">
+            Week One
+          </button>
+          <button class="choose-day-program-desktop-btn" btn-value="09">
+            Week Two
+          </button>
+          <button class="choose-day-program-desktop-btn" btn-value="16">
+            Week Three
+          </button>
+          <button class="choose-day-program-desktop-btn" btn-value="23">
+            Week Four
+          </button>
+          <button class="choose-day-program-desktop-btn" btn-value="30">
+            Week Five
+          </button>
+        </div>
+      </section>
+
+      <!-- Container for weekly schedule tables -->
+      <div id="weekly-schedule-container"></div>
+    </section>
+  </body>
+</html>

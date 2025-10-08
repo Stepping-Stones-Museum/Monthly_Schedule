@@ -1,0 +1,358 @@
+body {
+    height: 85vh;
+    font-family: 'Scala Sans', sans-serif;
+}
+
+.desktop-container   {
+    display: none;
+}
+
+.toggle-containers-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.monthly-calendar-section {
+    display: block;
+    height: 100%;
+}
+
+.weekday-labels {
+    background: black;
+}
+
+.weekday-labels div {
+    color: white;
+    padding: 5px 0px;
+    font-size: 12px;
+}
+
+.daily-calendar-section {
+    display: none;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 100%;;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(206, 83, 0);
+    background-image: url("./assets/bats-bg.webp");
+    background-size: 100px;
+}
+
+.day {
+    border: 0.5px solid #868686;
+    min-height: 75px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 100%;
+    position: relative;
+}
+
+.closed-day {
+    background-color: rgb(255, 210, 172);
+}
+
+
+.day-number {
+    font-weight: lighter;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    text-align: left;
+    font-size: 0.75rem;
+    position: absolute;
+}
+
+.background-leaf {
+    background-image: url("./assets/leaf.webp");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+.background-ice {
+    background-image: url("./assets/snowflake.webp");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+
+
+.day-events-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.day-events-block {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.day-events-top {
+
+}
+
+.day-events-middle {
+    gap: 10px;
+}
+
+.day-events-bottom {
+
+}
+
+.block-single {
+
+}
+
+
+.event {
+    font-size: 10px;
+    margin: 1px 0px 2px 0px;
+    position: relative;
+    border: none;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+
+.block-single.dismissals {
+    order: 3;
+    color: #0000f5;
+}
+
+.block-single.closures {
+    order: 4;
+    color: #0000f5;
+
+}
+
+.block-single.all-day {
+    order: 0;
+    color: #000020;
+    font-weight: bold;
+}
+
+.event.all-day {
+    order: 0;
+    color: #000020;
+    font-weight: bold;
+}
+
+.block-single.holiday {
+    order: 1;
+    color: black;
+    font-weight: bold;
+}
+
+.event.holiday {
+    order: 0;
+    color: #000020;
+    font-weight: bold;
+}
+
+.block-single.maintenance {
+    order: 2;
+    color: #ea3322;
+}
+
+.block-single.experiences {
+    order: 2;
+    color: #469de0;
+}
+
+.block-single.facility-rental {
+    order: 2;
+    color: black;
+
+
+}
+
+.block-single.birthday {
+    order: 2;
+    color: #a4ca47;
+}
+
+.block-single.group-school {
+    order: 2;
+    color: #db4d94;
+}
+
+.block-single.elli {
+    order: 2;
+    color: #ec703a;
+}
+
+.block-single.community-event {
+    order: 2;
+    color: red;
+}
+
+
+
+.event-expanded {
+    position: absolute;
+    display: none;
+    height: 100px;
+    background-color: #e3f2fd;
+    /*width: 250px;*/
+    z-index: 99;
+}
+
+.pink-bg {
+    background: #fb89f8;
+}
+
+.green-bg {
+    background: #7ff99c;
+}
+
+.purple-bg {
+    background: #d7b3fb;
+}
+
+.empty {
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  .empty::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("./assets/unicorn.webp") center/contain no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .empty:hover::after {
+    opacity: 1;
+  }
+  
+  
+
+.weekday-labels {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    text-align: center;
+}
+     
+     
+     
+/* Navigation container styling (if using day/week nav buttons) */
+.schedule-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 20px;
+}
+
+/* Truncated event description: show only 3 lines with ellipsis */
+.description {
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit to 3 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+
+/* Expanded description styling: show full content */
+.description.expanded {
+        -webkit-line-clamp: unset;
+        overflow: visible;
+}
+
+/* "Expand/Collapse" toggle styling */
+.expand-toggle {
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        font-size: 0.9rem;
+        margin-top: 0px;
+        display: inline-block;
+}
+
+/* Generic button styling */
+button {
+
+        cursor: pointer;
+}
+
+/* Headings */
+h2 {
+        margin: 0;
+        color: white;
+        background-color: rgb(206, 83, 0);
+        padding: 5px 25px;
+        height: 100%;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+}
+
+/* Small text styling for hours or descriptions */
+small {
+        font-weight: 500;
+        font-size: 0.75em;
+}
+
+/* Red text for conflicts or warnings */
+.red {
+        color: red;
+}
+
+/* Table styling */
+table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 25px 0px 50px 0px;
+}
+
+/* Table cells */
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    max-width: 200px;
+    line-height: 16px;
+}
+
+/* Table header background */
+th {
+    background-color: #79bb43;
+}
+
+/* Time column styling */
+.time-cell {
+    background-color: #dddddd;
+}
+
+/* Containers for events inside table cells */
+.event-div {
+    margin: 7px 0px;
+}
+
+
+
+.display-block {
+    display: block;
+}
