@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    let currentDate = new Date(2025, 9); // October 2025 (month is 0-based)
+    let currentDate = new Date(2025, 10); // October 2025 (month is 0-based)
     const calendar = document.getElementById("calendar");
     function renderCalendar(date) {
         const year = date.getFullYear();
@@ -405,7 +405,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const isoDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
             const theDay = new Date(isoDate).getDay();
 
-            console.log(theDay)
             if (theDay === 2) {
 
                 dayCell.classList.add("closed-day");
@@ -608,6 +607,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 allEvents = Object.values(data);
                 renderAllSchedules(chosenMonth, chosenDay); // Initial render
                 renderCalendar(currentDate);
+                console.log(currentDate)
+                console.log("Rendered Info", allEvents)
             })
             .catch((err) => {
                 console.error("Failed to fetch schedule data:", err);
