@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         calendar.innerHTML = "";
 
-        // Fill empty cells before first day
+        // Fill empty cells before first day TEST
         for (let i = 0; i < firstDay; i++) {
             const emptyCell = document.createElement("div");
             emptyCell.classList.add("day", "empty");
