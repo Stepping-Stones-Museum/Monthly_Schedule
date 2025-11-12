@@ -581,7 +581,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById("prevMonth").addEventListener("click", () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
-        renderMonth -= 1;
+        if (renderMonth == 0) {
+            renderMonth = 11;
+        } else {
+            renderMonth -= 1;
+        }
         fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}.json`;
         fetchWithUrl(fetchUrl);
         changeHeadingBg(months[renderMonth]);
@@ -590,7 +594,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById("nextMonth").addEventListener("click", () => {
         currentDate.setMonth(currentDate.getMonth() + 1);
-        renderMonth += 1;
+
+        if (renderMonth == 11) {
+            renderMonth = 0;
+        } else {
+            renderMonth += 1;
+        }
+
         fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}.json`;
         fetchWithUrl(fetchUrl);
         changeHeadingBg(months[renderMonth]);
