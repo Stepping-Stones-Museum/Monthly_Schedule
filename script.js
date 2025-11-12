@@ -4,6 +4,8 @@ const blueColorEvents = ["Music Makers", "Discovery Station"];
 const greenColorEvents = ["Page to Stage", "Turn the Page"];
 const purpleColorEvents = ["Edible Garden"];
 const pinkColorEvents = ["Puppet/Mascot"];
+const calendarHeader = document.querySelector(".calendar-header")
+
 
 
 setInterval(() => {
@@ -368,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    let currentDate = new Date(2025, 10); // October 2025 (month is 0-based)
+    let currentDate = new Date(); // November 2025 (month is 0-based)
     const calendar = document.getElementById("calendar");
     function renderCalendar(date) {
         const year = date.getFullYear();
@@ -581,8 +583,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
         renderMonth -= 1;
         fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}.json`;
-        console.log(fetchUrl)
         fetchWithUrl(fetchUrl);
+        changeHeadingBg(months[renderMonth]);
         // renderCalendar(currentDate);
     });
 
@@ -590,10 +592,25 @@ document.addEventListener('DOMContentLoaded', () => {
         currentDate.setMonth(currentDate.getMonth() + 1);
         renderMonth += 1;
         fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}.json`;
-        console.log(fetchUrl)
         fetchWithUrl(fetchUrl);
+        changeHeadingBg(months[renderMonth]);
         // renderCalendar(currentDate);
     });
+
+    function changeHeadingBg(month) {
+        calendarHeader.classList = 'calendar-header';
+        const monthLabel = document.getElementById('monthLabel')
+        if (month == 'November') {
+            calendarHeader.classList = 'calendar-header november-bg';
+            monthLabel.classList = 'november'
+        } else if (month == 'December') {
+            calendarHeader.classList = 'calendar-header december-bg';
+            monthLabel.classList = 'december'
+        } else if (month == 'October') {
+            calendarHeader.classList = 'calendar-header october-bg';
+            monthLabel.classList = 'october'
+        }
+    }
 
 
     // Fetch events data from Firebase Realtime Database
@@ -607,6 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 allEvents = Object.values(data);
                 renderAllSchedules(chosenMonth, chosenDay); // Initial render
                 renderCalendar(currentDate);
+
                 console.log(currentDate)
                 console.log("Rendered Info", allEvents)
             })

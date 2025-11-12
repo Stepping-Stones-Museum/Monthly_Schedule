@@ -42,9 +42,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background-color: rgb(142, 4, 38);
+    background-image: url("./assets/leaf-bg.webp");
+    background-size: 100px;
+}
+
+.october-bg {
     background-color: rgb(206, 83, 0);
     background-image: url("./assets/bats-bg.webp");
-    background-size: 100px;
+}
+
+.november-bg {
+    background-color: rgb(142, 4, 38);
+    background-image: url("./assets/leaf-bg.webp");
+}
+
+.december-bg {
+    background-color: rgb(39, 164, 227);
+    background-image: url("./assets/snow-bg.webp");
 }
 
 .day {
@@ -299,13 +315,26 @@ button {
 h2 {
         margin: 0;
         color: white;
-        background-color: rgb(206, 83, 0);
-        padding: 5px 25px;
+        
+        background-color: rgb(142, 4, 38);
+        padding: 5px 10px;
         height: 100%;
         font-size: 1rem;
         font-weight: 400;
         letter-spacing: 5px;
         text-transform: uppercase;
+}
+
+.october {
+    background-color: rgb(206, 83, 0);
+}
+
+.november {
+    background-color: rgb(142, 4, 38);
+}
+
+.december {
+    background-color: rgb(39, 164, 227)
 }
 
 /* Small text styling for hours or descriptions */
