@@ -24,11 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
         'July', 'August', 'September', 'October', 'November', 'December'
     ];
 
+    const years = [
+        '', '_2026', '_2027'
+    ];
+
     // Initial month/day to display
     let chosenMonth = "09";
     let chosenDay = "02";
     let renderMonth = new Date().getMonth();
-    let fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}.json`;
+    let renderYear = 0;
+    let fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}${years[renderYear]}.json`;
 
     console.log(fetchUrl)
 
@@ -583,10 +588,11 @@ document.addEventListener('DOMContentLoaded', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
         if (renderMonth == 0) {
             renderMonth = 11;
+            renderYear -= 1;
         } else {
             renderMonth -= 1;
         }
-        fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}.json`;
+        fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}${years[renderYear]}.json`;
         fetchWithUrl(fetchUrl);
         changeHeadingBg(months[renderMonth]);
         // renderCalendar(currentDate);
@@ -597,11 +603,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (renderMonth == 11) {
             renderMonth = 0;
+            renderYear += 1;
         } else {
             renderMonth += 1;
         }
 
-        fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}.json`;
+        fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}${years[renderYear]}.json`;
         fetchWithUrl(fetchUrl);
         changeHeadingBg(months[renderMonth]);
         // renderCalendar(currentDate);
