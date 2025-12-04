@@ -516,14 +516,21 @@ document.addEventListener('DOMContentLoaded', () => {
                             eventBlockSingle.appendChild(eventTime);
                         }
 
-                        eventBlockSingle.appendChild(eventEl);
+
+
+                        const divBlock = document.createElement('div');
+                        divBlock.append(eventEl);
+                        divBlock.classList.add("event")
+                        eventBlockSingle.appendChild(divBlock);
 
 
                         if (allEvents[i].location !== "None") {
                             const eventLoc = document.createElement("p");
                             eventLoc.textContent = allEvents[i].location;
                             eventLoc.classList.add("event", config.class);
-                            eventBlockSingle.appendChild(eventLoc);
+                            divBlock.textContent = `${allEvents[i].activity} [${allEvents[i].location}]`;
+
+                            eventBlockSingle.appendChild(divBlock);
                         }
 
                         eventBlockSingle.classList.add(config.class);
