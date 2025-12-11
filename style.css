@@ -70,8 +70,8 @@ body {
 }
 
 .february-bg {
-    background-color: rgb(142, 4, 38);
-    background-image: url("./assets/leaf-bg.webp");
+    background-color: rgb(97, 1, 25);
+    background-image: url("./assets/hearts-bg.webp");
 }
 
 .march-bg {
@@ -373,12 +373,16 @@ h2 {
     background-color: #2b3e67;
 }
 
+.february {
+    background-color: rgb(97, 1, 25);;
+}
+
 .march {
     background-color: rgb(61, 164, 92);
 }
 
 .april {
-    background-color: rgb(75, 186, 242)
+    background-color: rgb(142, 212, 247);
 }
 
 /* Small text styling for hours or descriptions */
