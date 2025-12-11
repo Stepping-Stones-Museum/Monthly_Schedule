@@ -45,7 +45,7 @@ body {
 
     background-color: rgb(39, 164, 227);
     background-image: url("./assets/snow-bg.webp");
-    background-size: 100px;
+    background-size: 75px;
 }
 
 .october-bg {
@@ -59,6 +59,39 @@ body {
 }
 
 .december-bg {
+    background-color: rgb(39, 164, 227);
+    background-image: url("./assets/snow-bg.webp");
+}
+
+.january-bg {
+    background-color: #2b3e67;
+    background-image: url("./assets/ice-bg.webp");
+    background-size: 225px;
+}
+
+.february-bg {
+    background-color: rgb(142, 4, 38);
+    background-image: url("./assets/leaf-bg.webp");
+}
+
+.march-bg {
+    background-color: rgb(61, 164, 92);
+    background-image: url("./assets/shamrock-bg.webp");
+    background-size: 75px;
+}
+
+.april-bg {
+    background-color: rgb(142, 212, 247);
+    background-image: url("./assets/flowers-bg.webp");
+    background-size: 70px;
+}
+
+.may-bg {
+    background-color: rgb(142, 4, 38);
+    background-image: url("./assets/leaf-bg.webp");
+}
+
+.june-bg {
     background-color: rgb(39, 164, 227);
     background-image: url("./assets/snow-bg.webp");
 }
@@ -334,6 +367,18 @@ h2 {
 
 .december {
     background-color: rgb(39, 164, 227)
+}
+
+.january {
+    background-color: #2b3e67;
+}
+
+.march {
+    background-color: rgb(61, 164, 92);
+}
+
+.april {
+    background-color: rgb(75, 186, 242)
 }
 
 /* Small text styling for hours or descriptions */
