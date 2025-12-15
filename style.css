@@ -92,8 +92,9 @@ body {
 }
 
 .june-bg {
-    background-color: rgb(39, 164, 227);
-    background-image: url("./assets/snow-bg.webp");
+    background-color: rgb(143, 212, 246);
+    background-image: url("./assets/beachballs-bg.webp");
+    background-size: 65px;
 }
 
 .day {
@@ -382,6 +383,15 @@ h2 {
 }
 
 .april {
+    background-color: rgb(142, 212, 247);
+}
+
+.june {
+    background-color:rgb(143, 212, 246);
+}
+
+
+.july {
     background-color: rgb(142, 212, 247);
 }
 
