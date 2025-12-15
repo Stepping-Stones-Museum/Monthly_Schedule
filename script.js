@@ -476,13 +476,34 @@ document.addEventListener('DOMContentLoaded', () => {
             dayCell.appendChild(eventContainer);
 
 
+            const todaysEvents = allEvents.filter(event => event.date === isoDate);
+
+            todaysEvents.sort((a, b) => {
+                // If neither has a start time, keep original order
+                if (!a.start && !b.start) return 0;
+
+                // If only A has no time, put it after B
+                if (!a.start) return 1;
+
+                // If only B has no time, put it after A
+                if (!b.start) return -1;
+
+                // Both have times → compare HH:MM
+                return a.start.localeCompare(b.start);
+            });
 
             // Loops through all events for the day
-            for (let i = 0; i < allEvents.length; i++) {
-                if (allEvents[i].date == isoDate) {
+            for (let i = 0; i < todaysEvents.length; i++) {
+
+
+
+                // if (allEvents[i].date == isoDate) {
+
+                if (todaysEvents[i].date == isoDate) {
+
                     const eventEl = document.createElement("p");
                     eventEl.classList.add("event");
-                    eventEl.textContent = allEvents[i].activity;
+                    eventEl.textContent = todaysEvents[i].activity;
 
                     const eventBlockSingle = document.createElement("div");
                     eventBlockSingle.classList.add("block-single");
@@ -506,12 +527,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     };
 
                     // Look up the event type in the config
-                    const config = eventConfig[allEvents[i].type];
+                    const config = eventConfig[todaysEvents[i].type];
 
                     if (config) {
                         if (config.addTime) {
                             const eventTime = document.createElement("p");
-                            eventTime.textContent = allEvents[i].hours;
+                            eventTime.textContent = todaysEvents[i].hours;
                             eventTime.classList.add("event", config.class);
                             eventBlockSingle.appendChild(eventTime);
                         }
@@ -524,11 +545,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         eventBlockSingle.appendChild(divBlock);
 
 
-                        if (allEvents[i].location !== "None") {
+                        if (todaysEvents[i].location !== "None") {
                             const eventLoc = document.createElement("p");
-                            eventLoc.textContent = allEvents[i].location;
+                            eventLoc.textContent = todaysEvents[i].location;
                             eventLoc.classList.add("event", config.class);
-                            divBlock.textContent = `${allEvents[i].activity} [${allEvents[i].location}]`;
+                            divBlock.textContent = `${todaysEvents[i].activity} [${todaysEvents[i].location}]`;
 
                             eventBlockSingle.appendChild(divBlock);
                         }
@@ -664,7 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then((res) => res.json())
             .then((data) => {
                 allEvents = Object.values(data);
-                renderAllSchedules(chosenMonth, chosenDay); // Initial render
+                renderAllSchedules(chosenMonth, chosenDay);
                 renderCalendar(currentDate);
 
                 console.log(currentDate)
@@ -682,13 +703,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     chooseCalendarViewBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            monthlyView = !monthlyView; // toggle true/false
+            monthlyView = !monthlyView;
             toggleCalendarView();
         });
     });
 
     function toggleCalendarView() {
-        const calendar = document.querySelector(".calendar"); // or your calendar element
+        const calendar = document.querySelector(".calendar");
         if (monthlyView) {
             monthlyCalendarSection.style.display = "block";
             dailyCalendarSection.style.display = "none";
