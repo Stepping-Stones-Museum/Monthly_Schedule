@@ -1,9 +1,5 @@
 
 let allEvents = {};
-const blueColorEvents = ["Music Makers", "Discovery Station"];
-const greenColorEvents = ["Page to Stage", "Turn the Page"];
-const purpleColorEvents = ["Edible Garden"];
-const pinkColorEvents = ["Puppet/Mascot"];
 const calendarHeader = document.querySelector(".calendar-header")
 
 
@@ -559,33 +555,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         config.block.appendChild(eventBlockSingle);
                         eventEl.classList.add(config.class);
                     }
-
-                    // eventList.appendChild(eventNameLi);
-                    // const eventHoursLi = document.createElement("li");
-                    // eventHoursLi.textContent = allEvents[i].hours;
-                    // eventList.appendChild(eventHoursLi);
-
-                    // eventContainer.addEventListener("click", function () {
-                    //     eventContainer.querySelector(".event-expanded").classList.toggle("display-block")
-                    // })
-
-                    // if (pinkColorEvents.includes(allEvents[i].activity)) {
-                    //     eventEl.classList.add("pink-bg");
-                    // } else if (greenColorEvents.includes(allEvents[i].activity)) {
-                    //     eventEl.classList.add("green-bg");
-                    // } else if (purpleColorEvents.includes(allEvents[i].activity)) {
-                    //     eventEl.classList.add("purple-bg");
-                    // } else if (blueColorEvents.includes(allEvents[i].activity)) {
-                    //     eventEl.classList.add("blue-bg");
-                    // }
-                    // eventEl.textContent = allEvents[i].activity;
-
-
-                    // eventExpanded.appendChild(eventList);
-
-                    // eventContainer.appendChild(eventEl);
-                    // eventContainer.appendChild(eventExpanded);
-
                 }
             }
 
@@ -594,20 +563,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             calendar.appendChild(dayCell);
         }
-
-        // for (let i = 0; i < days; i + 7) {
-        //     const d = new Date(start);
-        //     d.setDate(start.getDate() + i);
-        //     const key = d.toISOString().split("T")[0]; // YYYY-MM-DD
-        //     console.log(key)
-        //     const cell = document.querySelector(`${selector}[data-date="${key}"]`);
-        //     if (!cell) continue;
-
-        //     // Skip if already marked
-        //     if (cell.querySelector(".background-leaf")) continue;
-
-        //     cell.classList.add("background-leaf")
-        // }
     }
 
 
