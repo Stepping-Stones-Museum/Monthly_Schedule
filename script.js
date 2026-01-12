@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let chosenMonth = "09";
     let chosenDay = "02";
     let renderMonth = new Date().getMonth();
-    let renderYear = 0;
+    let renderYear = 1;
     let fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}${years[renderYear]}.json`;
 
     console.log(fetchUrl)
