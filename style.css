@@ -440,18 +440,20 @@ th {
 
 .everyday-experience-container h3 {
     font-size: 0.80rem;
-    margin: 0;
+    margin: 5px 0px 0px 0px;
+    text-align: center;
 }
 
 .everyday-experience-container h4 {
     font-size: 0.80rem;
     margin: 0;
     font-weight: 400;
+    text-align: center;
 }
 
 .everyday-experience-container ul {
-    padding: 0;
-
+    padding: 20px 0px 0px 5px;
+    margin: 0;
 }
 
 .everyday-experience-container li {
