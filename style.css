@@ -40,12 +40,18 @@ body {
 
 .calendar-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-
     background-color: rgb(39, 164, 227);
     background-image: url("./assets/snow-bg.webp");
     background-size: 75px;
+}
+.toggle-arrow {
+    /* .. */
+    /* background-color: rgb(237, 0, 198); */
+    border: none;
+    border-radius: 3px;
+    padding: 2px 10px;
 }
 
 .october-bg {
