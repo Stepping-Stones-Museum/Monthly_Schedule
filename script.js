@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         calendar.innerHTML = "";
 
-        // Fill empty cells before first day TEST
+        // Fill empty cells before first day
         for (let i = 0; i < firstDay; i++) {
             const emptyCell = document.createElement("div");
             emptyCell.classList.add("day", "empty");
@@ -393,13 +393,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Fill actual days
-        for (let day = 1; day <= daysInMonth; day++) {
+        for (let day = 1; day <= daysInMonth + 3; day++) {
             const dayCell = document.createElement("div");
             dayCell.classList.add("day");
 
+
             const dayNumber = document.createElement("div");
             dayNumber.classList.add("day-number");
-            dayNumber.textContent = day;
+
+
+            if (day <= daysInMonth) {
+                dayNumber.textContent = day;
+            }
 
             dayCell.appendChild(dayNumber);
 
@@ -442,16 +447,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-            // if (events[isoDate]) {
-            //     events[isoDate].forEach(ev => {
-            //         const eventEl = document.createElement("div");
-            //         eventEl.classList.add("event");
-            //         eventEl.textContent = ev;
-            //         dayCell.appendChild(eventEl);
-            //     });
-            // }
 
             const eventContainer = document.createElement("div");
             eventContainer.classList.add("day-events-container");
@@ -558,6 +553,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            if (day == daysInMonth + 1) {
+                const everydayExperienceDiv = document.createElement("div");
+                everydayExperienceDiv.classList.add("everyday-experience-container")
+                everydayExperienceDiv.innerHTML = "<h3>Monday – Friday</h3> <h4>All located in The Stage unless noted</h4><ul><li>10:30 – Music Experience</li><li>11:00 – Puppet Variety Show</li><li>11:15 – Storytelling Experience (Located in the Book Nook)</li><li>12:00 – Mindful Experience</li><li>1:00 – Music Experience</li><li>2:00 – Puppet Variety Show</li><li>3:00 – Storytelling Experience</li><li>4:00 – Mindfulness Experience</li></ul>"
+
+                eventBlockTop.appendChild(everydayExperienceDiv);
+            } else if (day == daysInMonth + 2) {
+                const everydayExperienceDiv = document.createElement("div");
+                everydayExperienceDiv.classList.add("everyday-experience-container")
+                everydayExperienceDiv.innerHTML = "<h3>Saturday & Sunday</h3> <h4>All located in The Theater unless noted</h4><ul><li>10:30 – Music Experience</li><li>11:00 – Puppet Variety Show</li><li>11:15 – Storytelling Experience (Located in the Book Nook)</li><li>12:00 – Mindful Experience</li><li>1:00 – Music Experience</li><li>2:00 – Puppet Variety Show</li><li>3:00 – Storytelling Experience</li><li>4:00 – Mindfulness Experience</li></ul>"
+
+                eventBlockTop.appendChild(everydayExperienceDiv);
+            } else if (day == daysInMonth + 3) {
+                const everydayExperienceDiv = document.createElement("div");
+                everydayExperienceDiv.classList.add("everyday-experience-container")
+                everydayExperienceDiv.innerHTML = "<h3>Puppet Weekends</h3> <h4>All located in The Theater unless noted</h4><ul><li>10:15 – Storytelling Experience (Loicated in the Book Nook)</li><li>12:00 – Music Experience</li><li>12:30 – Mindfulness Experience</li><li>1:15 – Storytelling Experience (Located in the Book Nook)</li><li>3:00 – Music Experience</li><li>3:30 – Mindfulness Experience</li><li>4:00 – Storytelling Experience (Located in the Book Nook)</li><li>4:00 – Puppet Experience</li></ul>"
+
+                eventBlockTop.appendChild(everydayExperienceDiv);
+            }
+
 
 
 
@@ -642,7 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 allEvents = Object.values(data);
                 renderAllSchedules(chosenMonth, chosenDay);
                 renderCalendar(currentDate);
-
+                changeHeadingBg(months[renderMonth]);
                 console.log(currentDate)
                 console.log("Rendered Info", allEvents)
             })
