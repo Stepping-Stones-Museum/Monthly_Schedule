@@ -452,9 +452,10 @@ th {
 }
 
 .everyday-experience-container h3 {
-    font-size: 0.80rem;
+    font-size: 1rem;
     margin: 5px 0px 0px 0px;
     text-align: center;
+    text-decoration: underline;
 }
 
 .everyday-experience-container h4 {
