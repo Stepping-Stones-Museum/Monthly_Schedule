@@ -367,6 +367,8 @@ h2 {
         font-weight: 400;
         letter-spacing: 5px;
         text-transform: uppercase;
+        text-align: center;
+        min-width: 250px;
 }
 
 .october {
