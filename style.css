@@ -40,7 +40,8 @@ body {
 .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    height: 100%;;
+    grid-auto-rows: minmax(125px, auto);  
+    height: 100%;
 }
 
 .calendar-header {
@@ -449,6 +450,16 @@ th {
 /* Containers for events inside table cells */
 .event-div {
     margin: 7px 0px;
+}
+
+.everyday-experience-container {
+    /* border: 0.5px solid #868686;
+    min-height: 75px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 100%;
+    position: relative; */
 }
 
 .everyday-experience-container h3 {
