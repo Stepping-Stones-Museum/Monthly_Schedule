@@ -374,11 +374,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentDate = new Date(); // November 2025 (month is 0-based)
     const calendar = document.getElementById("calendar");
     function renderCalendar(date) {
+        let differential = 3;
         const year = date.getFullYear();
         const month = date.getMonth();
         const firstDay = new Date(year, month, 1).getDay();
         console.log("other first: ", firstDay)
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        let daysInMonth = new Date(year, month + 1, 0).getDate();
 
         document.getElementById("monthLabel").innerText =
             date.toLocaleString("default", { month: "long", year: "numeric" });
@@ -421,11 +422,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 emptyCell.classList.add("day", "empty");
                 calendar.appendChild(emptyCell);
             }
+            differential = 3;
         }
 
 
         // Fill actual days
-        for (let day = 1; day <= daysInMonth + 3; day++) {
+        for (let day = 1; day <= (daysInMonth + differential); day++) {
             const dayCell = document.createElement("div");
             dayCell.classList.add("day");
 
@@ -613,6 +615,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     eventContainer.removeChild(eventBlockMiddle);
                     eventContainer.removeChild(eventBlockBottom);
                 }
+                calendar.appendChild(dayCell);
+            } else if (day <= daysInMonth) {
+                calendar.appendChild(dayCell);
             }
 
 
@@ -622,7 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            calendar.appendChild(dayCell);
+
         }
     }
 
