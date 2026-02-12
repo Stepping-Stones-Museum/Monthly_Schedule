@@ -1,9 +1,10 @@
 * {
-    margin: 0;
+    
     box-sizing: border-box;
 }
 
 body {
+    margin: 10px;
     height: 92vh;
     font-family: 'Scala Sans', sans-serif;
 }
@@ -40,7 +41,7 @@ body {
 .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-auto-rows: minmax(125px, auto);  
+    grid-auto-rows: minmax(100px, auto);  
     height: 100%;
 }
 
@@ -182,7 +183,7 @@ body {
 
 
 .event {
-    font-size: 9px;
+    font-size: 10px;
     margin: 1px 0px 2px 0px;
     position: relative;
     border: none;
@@ -247,7 +248,7 @@ body {
 
 .block-single.birthday {
     order: 2;
-    color: #a4ca47;
+    color: #24a507;
 }
 
 .block-single.group-school {
