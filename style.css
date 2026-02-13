@@ -4,7 +4,7 @@
 }
 
 body {
-    margin: 10px;
+    margin: 5px 10px;
     height: 92vh;
     font-family: 'Scala Sans', sans-serif;
 }
@@ -41,7 +41,7 @@ body {
 .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-auto-rows: minmax(100px, auto);  
+    grid-auto-rows: minmax(80, auto);  
     height: 100%;
 }
 
@@ -465,7 +465,7 @@ th {
 
 .everyday-experience-container h3 {
     font-size: 0.9rem;
-    margin: 5px 0px 0px 0px;
+    margin: 5px 0px 2px 0px;
     text-align: center;
     text-decoration: underline;
 }
@@ -484,7 +484,7 @@ th {
 
 .everyday-experience-container li {
     font-size: 9px;
-    margin: 0;
+    margin: 0px 0px 2px 0px;
     font-weight: 400;
     list-style:none;
 }
