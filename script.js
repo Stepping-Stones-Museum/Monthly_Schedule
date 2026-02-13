@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 emptyCell.classList.add("day", "empty");
                 calendar.appendChild(emptyCell);
             }
-            differential = 3;
+            differential = 2;
         }
 
 
