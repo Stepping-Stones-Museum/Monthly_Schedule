@@ -395,18 +395,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (i == 0) {
                     const everydayExperienceDiv = document.createElement("div");
                     everydayExperienceDiv.classList.add("everyday-experience-container")
-                    everydayExperienceDiv.innerHTML = "<h3>Monday – Friday</h3> <h4>All located in The Stage unless noted</h4><ul><li><strong>10:30</strong> – Music Experience</li><li><strong>11:00</strong> – Puppet Variety Show</li><li><strong>11:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Mindful Experience</li><li><strong>1:00 </strong>– Music Experience</li><li><strong>2:00 </strong>– Puppet Variety Show</li><li><strong>3:00 </strong>– Storytelling Experience</li><li><strong>4:00</strong> – Mindfulness Experience</li></ul>"
+                    everydayExperienceDiv.innerHTML = "<h3>Monday – Friday</h3> <h4>(The Stage unless noted)</h4><ul><li><strong>10:30</strong> – Music Experience</li><li><strong>11:00</strong> – Puppet Variety Show</li><li><strong>11:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Mindful Experience</li><li><strong>1:00 </strong>– Music Experience</li><li><strong>2:00 </strong>– Puppet Variety Show</li><li><strong>3:00 </strong>– Storytelling Experience</li><li><strong>4:00</strong> – Mindfulness Experience</li></ul>"
                     calendar.appendChild(everydayExperienceDiv);
                 } else if (i == 1) {
                     const everydayExperienceDiv = document.createElement("div");
                     everydayExperienceDiv.classList.add("everyday-experience-container")
-                    everydayExperienceDiv.innerHTML = "<h3>Saturday & Sunday</h3> <h4>All located in The Theater unless noted</h4><ul><li><strong>10:30</strong> – Music Experience</li><li><strong>11:00</strong> – Puppet Variety Show</li><li><strong>11:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Mindful Experience</li><li><strong>1:00 </strong>– Music Experience</li><li><strong>2:00 </strong>– Puppet Variety Show</li><li><strong>3:00 </strong>– Storytelling Experience</li><li><strong>4:00</strong> – Mindfulness Experience</li></ul>"
+                    everydayExperienceDiv.innerHTML = "<h3>Saturday & Sunday</h3> <h4>(The Theater unless noted)</h4><ul><li><strong>10:30</strong> – Music Experience</li><li><strong>11:00</strong> – Puppet Variety Show</li><li><strong>11:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Mindful Experience</li><li><strong>1:00 </strong>– Music Experience</li><li><strong>2:00 </strong>– Puppet Variety Show</li><li><strong>3:00 </strong>– Storytelling Experience</li><li><strong>4:00</strong> – Mindfulness Experience</li></ul>"
                     calendar.appendChild(everydayExperienceDiv);
 
                 } else if (i == 2) {
                     const everydayExperienceDiv = document.createElement("div");
                     everydayExperienceDiv.classList.add("everyday-experience-container")
-                    everydayExperienceDiv.innerHTML = "<h3>Puppet Weekends</h3> <h4>All located in The Theater unless noted</h4><ul><li><strong>10:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Music Experience</li><li><strong>12:30</strong> – Mindfulness Experience</li><li><strong>1:15 </strong>– Storytelling Experience (Book Nook)</li><li><strong>3:00 </strong>– Music Experience</li><li><strong>3:30 </strong>– Mindfulness Experience</li><li><strong>4:00</strong> – Storytelling Experience (Book Nook)</li><li><strong>4:00</strong> – Puppet Experience</li></ul>"
+                    everydayExperienceDiv.innerHTML = "<h3>Puppet Weekends</h3> <h4>(The Theater unless noted)</h4><ul><li><strong>10:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Music Experience</li><li><strong>12:30</strong> – Mindfulness Experience</li><li><strong>1:15 </strong>– Storytelling Experience (Book Nook)</li><li><strong>3:00 </strong>– Music Experience</li><li><strong>3:30 </strong>– Mindfulness Experience</li><li><strong>4:00</strong> – Storytelling Experience (Book Nook)</li><li><strong>4:00</strong> – Puppet Experience</li></ul>"
                     calendar.appendChild(everydayExperienceDiv);
                 } else {
                     const emptyCell = document.createElement("div");
@@ -591,7 +591,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (day == daysInMonth + 1) {
                     const everydayExperienceDiv = document.createElement("div");
                     everydayExperienceDiv.classList.add("everyday-experience-container")
-                    everydayExperienceDiv.innerHTML = "<h3>Monday – Friday</h3> <h4>All located in The Stage unless noted</h4><ul><li><strong>10:30</strong> – Music Experience</li><li><strong>11:00</strong> – Puppet Variety Show</li><li><strong>11:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Mindful Experience</li><li><strong>1:00 </strong>– Music Experience</li><li><strong>2:00 </strong>– Puppet Variety Show</li><li><strong>3:00 </strong>– Storytelling Experience</li><li><strong>4:00</strong> – Mindfulness Experience</li></ul>"
+                    everydayExperienceDiv.innerHTML = "<h3>Monday – Friday</h3> <h4>(The Stage unless noted)</h4><ul><li><strong>10:30</strong> – Music Experience</li><li><strong>11:00</strong> – Puppet Variety Show</li><li><strong>11:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Mindful Experience</li><li><strong>1:00 </strong>– Music Experience</li><li><strong>2:00 </strong>– Puppet Variety Show</li><li><strong>3:00 </strong>– Storytelling Experience</li><li><strong>4:00</strong> – Mindfulness Experience</li></ul>"
 
                     eventBlockTop.appendChild(everydayExperienceDiv);
                     eventContainer.removeChild(eventBlockMiddle);
@@ -599,7 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (day == daysInMonth + 2) {
                     const everydayExperienceDiv = document.createElement("div");
                     everydayExperienceDiv.classList.add("everyday-experience-container")
-                    everydayExperienceDiv.innerHTML = "<h3>Saturday & Sunday</h3> <h4>All located in The Theater unless noted</h4><ul><li><strong>10:30</strong> – Music Experience</li><li><strong>11:00</strong> – Puppet Variety Show</li><li><strong>11:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Mindful Experience</li><li><strong>1:00 </strong>– Music Experience</li><li><strong>2:00 </strong>– Puppet Variety Show</li><li><strong>3:00 </strong>– Storytelling Experience</li><li><strong>4:00</strong> – Mindfulness Experience</li></ul>"
+                    everydayExperienceDiv.innerHTML = "<h3>Saturday & Sunday</h3> <h4>(The Theater unless noted)</h4><ul><li><strong>10:30</strong> – Music Experience</li><li><strong>11:00</strong> – Puppet Variety Show</li><li><strong>11:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Mindful Experience</li><li><strong>1:00 </strong>– Music Experience</li><li><strong>2:00 </strong>– Puppet Variety Show</li><li><strong>3:00 </strong>– Storytelling Experience</li><li><strong>4:00</strong> – Mindfulness Experience</li></ul>"
 
                     eventBlockTop.appendChild(everydayExperienceDiv);
 
@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (day == daysInMonth + 3) {
                     const everydayExperienceDiv = document.createElement("div");
                     everydayExperienceDiv.classList.add("everyday-experience-container")
-                    everydayExperienceDiv.innerHTML = "<h3>Puppet Weekends</h3> <h4>All located in The Theater unless noted</h4><ul><li><strong>10:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Music Experience</li><li><strong>12:30</strong> – Mindfulness Experience</li><li><strong>1:15 </strong>– Storytelling Experience (Book Nook)</li><li><strong>3:00 </strong>– Music Experience</li><li><strong>3:30 </strong>– Mindfulness Experience</li><li><strong>4:00</strong> – Storytelling Experience (Book Nook)</li><li><strong>4:00</strong> – Puppet Experience</li></ul>"
+                    everydayExperienceDiv.innerHTML = "<h3>Puppet Weekends</h3> <h4>(The Theater unless noted)</h4><ul><li><strong>10:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Music Experience</li><li><strong>12:30</strong> – Mindfulness Experience</li><li><strong>1:15 </strong>– Storytelling Experience (Book Nook)</li><li><strong>3:00 </strong>– Music Experience</li><li><strong>3:30 </strong>– Mindfulness Experience</li><li><strong>4:00</strong> – Storytelling Experience (Book Nook)</li><li><strong>4:00</strong> – Puppet Experience</li></ul>"
 
                     eventBlockTop.appendChild(everydayExperienceDiv);
 
