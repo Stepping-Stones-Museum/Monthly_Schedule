@@ -449,8 +449,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const days = 40;
 
-            const fallStart = new Date(2025, 9, 19);   // Jan 19, 2025 (month is 0-indexed)
+            const fallStart = new Date(2025, 9, 19);   // Oct 19, 2025 (month is 0-indexed)
             const winterStart = new Date(2025, 10, 28); // Nov 28, 2025
+            const springStart = new Date(2026, 2, 5); // March 5, 2026
+            const summerStart = new Date(2026, 5, 25); // June 25, 2026
 
             for (let i = 0; i < days; i++) {
                 let d = new Date(fallStart);   // clone start date
@@ -465,6 +467,29 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < days; i++) {
                 let d = new Date(winterStart);  // clone start date
                 d.setDate(winterStart.getDate() + i);
+                let key = d.toISOString().split("T")[0];
+
+                if (isoDate === key) {
+                    dayCell.classList.remove("background-leaf");
+                    dayCell.classList.add("background-ice");
+                }
+            }
+
+            for (let i = 0; i < days; i++) {
+                let d = new Date(springStart);   // clone start date
+                d.setDate(springStart.getDate() + i);  // add i days
+                let key = d.toISOString().split("T")[0]; // YYYY-MM-DD
+
+                if (isoDate === key) {
+                    dayCell.classList.remove("background-leaf");
+                    dayCell.classList.remove("background-ice");
+                    dayCell.classList.add("background-bloom");
+                }
+            }
+
+            for (let i = 0; i < days; i++) {
+                let d = new Date(summerStart);  // clone start date
+                d.setDate(summerStart.getDate() + i);
                 let key = d.toISOString().split("T")[0];
 
                 if (isoDate === key) {
