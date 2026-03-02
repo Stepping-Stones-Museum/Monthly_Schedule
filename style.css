@@ -149,7 +149,7 @@ body {
 }
 
 .background-bloom {
-    background-image: url("./assets/bloom-bg.webp");
+    background-image: url("./assets/bloom-alt-bg.webp");
     background-position: bottom right;
     background-repeat: no-repeat;
     background-size: 20px;
