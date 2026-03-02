@@ -454,47 +454,58 @@ document.addEventListener('DOMContentLoaded', () => {
             const springStart = new Date(2026, 2, 5); // March 5, 2026
             const summerStart = new Date(2026, 5, 25); // June 25, 2026
 
-            for (let i = 0; i < days; i++) {
+            dayCell.classList.add("background-logo");
+
+
+            for (let i = 0; i < 69; i++) {
                 let d = new Date(fallStart);   // clone start date
                 d.setDate(fallStart.getDate() + i);  // add i days
                 let key = d.toISOString().split("T")[0]; // YYYY-MM-DD
 
                 if (isoDate === key) {
-                    dayCell.classList.add("background-leaf");
+                    dayCell.classList.remove("sun");
+                    dayCell.classList.remove("ice");
+                    dayCell.classList.remove("bloom");
+                    dayCell.classList.add("leaf");
                 }
             }
 
-            for (let i = 0; i < days; i++) {
+            for (let i = 0; i < 69; i++) {
                 let d = new Date(winterStart);  // clone start date
                 d.setDate(winterStart.getDate() + i);
                 let key = d.toISOString().split("T")[0];
 
                 if (isoDate === key) {
-                    dayCell.classList.remove("background-leaf");
-                    dayCell.classList.add("background-ice");
+                    dayCell.classList.remove("leaf");
+                    dayCell.classList.remove("sun");
+                    dayCell.classList.remove("bloom");
+                    dayCell.classList.add("ice");
                 }
             }
 
-            for (let i = 0; i < days; i++) {
+            for (let i = 0; i < 69; i++) {
                 let d = new Date(springStart);   // clone start date
                 d.setDate(springStart.getDate() + i);  // add i days
                 let key = d.toISOString().split("T")[0]; // YYYY-MM-DD
 
                 if (isoDate === key) {
-                    dayCell.classList.remove("background-leaf");
-                    dayCell.classList.remove("background-ice");
-                    dayCell.classList.add("background-bloom");
+                    dayCell.classList.remove("leaf");
+                    dayCell.classList.remove("ice");
+                    dayCell.classList.remove("sun");
+                    dayCell.classList.add("bloom");
                 }
             }
 
-            for (let i = 0; i < days; i++) {
+            for (let i = 0; i < 76; i++) {
                 let d = new Date(summerStart);  // clone start date
                 d.setDate(summerStart.getDate() + i);
                 let key = d.toISOString().split("T")[0];
 
                 if (isoDate === key) {
-                    dayCell.classList.remove("background-leaf");
-                    dayCell.classList.add("background-ice");
+                    dayCell.classList.remove("leaf");
+                    dayCell.classList.remove("ice");
+                    dayCell.classList.remove("bloom");
+                    dayCell.classList.add("sun");
                 }
             }
 

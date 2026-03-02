@@ -134,25 +134,27 @@ body {
     position: absolute;
 }
 
-.background-leaf {
+.background-logo {
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+.leaf {
     background-image: url("./assets/leaf.webp");
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-size: 20px;
 }
 
-.background-ice {
+.ice {
     background-image: url("./assets/snowflake.webp");
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-size: 20px;
 }
 
-.background-bloom {
+.bloom {
     background-image: url("./assets/bloom-alt-bg.webp");
-    background-position: bottom right;
-    background-repeat: no-repeat;
     background-size: 25px;
+}
+
+.sun {
+    background-image: url("./assets/sun-bg.webp");
 }
 
 
