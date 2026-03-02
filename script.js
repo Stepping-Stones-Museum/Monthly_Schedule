@@ -449,8 +449,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let days = 40;
 
-            const fallStart = new Date(2025, 9, 19);   // Oct 19, 2025 (month is 0-indexed)
-            const winterStart = new Date(2025, 10, 28); // Nov 28, 2025
+            const fallStart = new Date(2026, 8, 24);   // Sept 24, 2026
+            const winterStart = new Date(2026, 11, 10); // Dec 10, 2026
             const springStart = new Date(2026, 2, 5); // March 5, 2026
             const summerStart = new Date(2026, 5, 25); // June 25, 2026
 
