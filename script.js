@@ -449,10 +449,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let days = 40;
 
-            const fallStart = new Date(2026, 8, 24);   // Sept 24, 2026
-            const winterStart = new Date(2026, 11, 10); // Dec 10, 2026
-            const springStart = new Date(2026, 2, 5); // March 5, 2026
-            const summerStart = new Date(2026, 5, 25); // June 25, 2026
+
+
+            let springStart = new Date(2026, 2, 5); // March 5, 2026
+            let summerStart = new Date(2026, 5, 25); // June 25, 2026
+            let fallStart = new Date(2026, 8, 24);   // Sept 24, 2026
+            let winterStart = new Date(2026, 11, 10); // Dec 10, 2026
 
             dayCell.classList.add("background-logo");
 
