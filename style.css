@@ -120,6 +120,12 @@ body {
     background-size: 65px;
 }
 
+.august-bg {
+background-color: rgb(0 52 78);
+   background-image: url("./assets/sun.webp");
+    background-size: 65px;
+}
+
 .day {
     border: 0.5px solid #868686;
     min-height: 75px;
@@ -429,6 +435,10 @@ h2 {
 
 .july {
     background-color: rgb(142, 212, 247);
+}
+
+.august {
+background-color: rgb(0 52 78)
 }
 
 /* Small text styling for hours or descriptions */
