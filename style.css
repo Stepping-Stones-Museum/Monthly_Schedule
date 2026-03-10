@@ -4,7 +4,7 @@
 }
 
 body {
-    margin: 5px 10px;
+    margin: 0px 5px;
     height: 92vh;
     font-family: 'Scala Sans', sans-serif;
 }
@@ -103,13 +103,15 @@ body {
     background-color: rgb(142, 212, 247);
     background-image: url("./assets/grass.webp");
     background-position: bottom;
-    background-size: 100px;
+    background-size: 150px;
 }
 
 .june-bg {
     background-color: rgb(142, 212, 247);
     background-image: url("./assets/butterflies.webp");
-    background-size: 65px;
+    background-size: 80px;
+        background-position: middle;
+
 }
 
 .july-bg {
