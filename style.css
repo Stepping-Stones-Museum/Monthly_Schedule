@@ -107,7 +107,13 @@ body {
 }
 
 .june-bg {
-    background-color: rgb(70, 240, 246);
+    background-color: rgb(142, 212, 247);
+    background-image: url("./assets/butterflies.webp");
+    background-size: 65px;
+}
+
+.july-bg {
+    background-color: rgb(142, 212, 247);
     background-image: url("./assets/beachballs-bg.webp");
     background-size: 65px;
 }
@@ -415,7 +421,7 @@ h2 {
 }
 
 .june {
-    background-color:rgb(70, 240, 246);
+        background-color: rgb(142, 212, 247);
 }
 
 
