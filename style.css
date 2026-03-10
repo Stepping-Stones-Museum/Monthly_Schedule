@@ -100,8 +100,10 @@ body {
 }
 
 .may-bg {
-    background-color: rgb(142, 4, 38);
-    background-image: url("./assets/leaf-bg.webp");
+    background-color: rgb(142, 212, 247);
+    background-image: url("./assets/grass.webp");
+    background-position: bottom;
+    background-size: 100px;
 }
 
 .june-bg {
