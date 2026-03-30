@@ -23,7 +23,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 0px 25px;
     background-color: rgb(39, 164, 227);
     background-image: url("./assets/snow-bg.webp");
     background-size: auto 100%;
@@ -44,13 +44,13 @@ body {
     /* background-color: rgb(39, 164, 227); */
     /* padding: 5px 10px; */
     height: 100%;
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 400;
-    letter-spacing: 5px;
+    letter-spacing: 15px;
     text-transform: uppercase;
     text-align: left;
     /* min-width: 250px; */
-    line-height: 4rem;
+    line-height: 3rem;
     font-family: 'DM Serif Display', serif;
     text-shadow: 1px 1px 4px rgb(2, 2, 51);
 }
