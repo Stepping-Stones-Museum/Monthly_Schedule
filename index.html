@@ -15,10 +15,18 @@
     </div>
     <section class="monthly-calendar-section">
       <div class="calendar-header">
-        <button class="toggle-arrow" id="prevMonth">◀ Prev</button>
-        <h2 id="monthLabel"></h2>
+        <div class="month-label-container">
+          <h2 class="month-label" id="monthLabel"></h2>
+          <h3 class="year-label" id="yearLabel">2025</h3>
+        </div>
 
-        <button class="toggle-arrow" id="nextMonth">Next ▶</button>
+        <div class="month-toggle-container">
+          <p class="season-label">Spring</p>
+          <button class="toggle-arrow" id="prevMonth">&larr;</button>
+          <button class="toggle-arrow" id="nextMonth">&rarr;</button>
+
+        </div>
+
       </div>
 
       <div class="weekday-labels">
@@ -32,6 +40,7 @@
       </div>
       <div class="calendar" id="calendar"></div>
     </section>
+
 
     <section class="daily-calendar-section">
       <div class="dropdown-nav-container">

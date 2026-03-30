@@ -1,5 +1,5 @@
 * {
-    
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -8,6 +8,110 @@ body {
     height: 92vh;
     font-family: 'Scala Sans', sans-serif;
 }
+
+/* ---------------------------   Cal Layout -----------------------------  */
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(80, auto);  
+    height: 100%;
+}
+
+/* ---------------------------   Cal Header -----------------------------  */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(39, 164, 227);
+    background-image: url("./assets/snow-bg.webp");
+    background-size: auto 100%;
+}
+
+.month-label-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+ h2 {
+    margin: 0em;
+ }
+
+.month-label {
+    margin: 0px;
+    color: white;
+    /* background-color: rgb(39, 164, 227); */
+    /* padding: 5px 10px; */
+    height: 100%;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: left;
+    /* min-width: 250px; */
+    line-height: 4rem;
+    font-family: 'DM Serif Display', serif;
+    text-shadow: 1px 1px 4px rgb(2, 2, 51);
+}
+
+.year-label {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    padding: 4px 12px;
+}
+
+
+
+
+.month-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.season-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+.toggle-arrow {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+  }
+/* ---------------------------   Cal Header -----------------------------  */
+
+
+/* ---------------------------   Cal Header -----------------------------  */
+
+
+
+/* ---------------------------   Cal Header -----------------------------  */
+
 
 .desktop-container   {
     display: none;
@@ -38,28 +142,10 @@ body {
     display: none;
 }
 
-.calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-auto-rows: minmax(80, auto);  
-    height: 100%;
-}
 
-.calendar-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(39, 164, 227);
-    background-image: url("./assets/snow-bg.webp");
-    background-size: 75px;
-}
-.toggle-arrow {
-    /* .. */
-    /* background-color: rgb(237, 0, 198); */
-    border: none;
-    border-radius: 3px;
-    padding: 2px 10px;
-}
+
+
+
 
 .october-bg {
     background-color: rgb(206, 83, 0);
@@ -79,7 +165,7 @@ body {
 .january-bg {
     background-color: #2b3e67;
     background-image: url("./assets/ice-bg.webp");
-    background-size: 225px;
+    /* background-size: 225px; */
 }
 
 .february-bg {
@@ -90,40 +176,40 @@ body {
 .march-bg {
     background-color: rgb(61, 164, 92);
     background-image: url("./assets/shamrock-bg.webp");
-    background-size: 75px;
+    /* background-size: 75px; */
 }
 
 .april-bg {
     background-color: rgb(142, 212, 247);
     background-image: url("./assets/flowers-bg.webp");
-    background-size: 70px;
+    /* background-size: 70px; */
 }
 
 .may-bg {
     background-color: rgb(142, 212, 247);
     background-image: url("./assets/grass.webp");
     background-position: bottom;
-    background-size: 150px;
+    /* background-size: 150px; */
 }
 
 .june-bg {
     background-color: rgb(142, 212, 247);
     background-image: url("./assets/butterflies.webp");
-    background-size: 80px;
-        background-position: middle;
+    /* background-size: 80px; */
+    background-position: middle;
 
 }
 
 .july-bg {
     background-color: rgb(142, 212, 247);
     background-image: url("./assets/beachballs-bg.webp");
-    background-size: 65px;
+    /* background-size: 65px; */
 }
 
 .august-bg {
 background-color: rgb(0 52 78);
    background-image: url("./assets/sun.webp");
-    background-size: 65px;
+    /* background-size: 65px; */
 }
 
 .day {
@@ -385,22 +471,9 @@ button {
         cursor: pointer;
 }
 
-/* Headings */
-h2 {
-        margin: 0;
-        color: white;
-        background-color: rgb(39, 164, 227);
-        padding: 5px 10px;
-        height: 100%;
-        font-size: 1rem;
-        font-weight: 400;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        text-align: center;
-        min-width: 250px;
-}
 
-.october {
+
+/* .october {
     background-color: rgb(206, 83, 0);
 }
 
@@ -439,7 +512,7 @@ h2 {
 
 .august {
 background-color: rgb(0 52 78)
-}
+} */
 
 /* Small text styling for hours or descriptions */
 small {

@@ -381,10 +381,11 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("other first: ", firstDay)
         let daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        document.getElementById("monthLabel").innerText =
-            date.toLocaleString("default", { month: "long", year: "numeric" });
+        const monthLabel = document.querySelector(".month-label")
+        const yearLabel = document.querySelector(".year-label")
 
-
+        monthLabel.innerText = date.toLocaleString("default", { month: "long" });
+        yearLabel.innerText = date.toLocaleString("default", { year: "numeric" });
         calendar.innerHTML = "";
 
         // Fill empty cells before first day
@@ -688,40 +689,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function changeHeadingBg(month) {
         calendarHeader.classList = 'calendar-header';
-        const monthLabel = document.getElementById('monthLabel')
+        // const monthLabel = document.getElementById('monthLabel')
         if (month == 'November') {
             calendarHeader.classList = 'calendar-header november-bg';
-            monthLabel.classList = 'november'
+            monthLabel.classList = 'month-label november'
         } else if (month == 'December') {
             calendarHeader.classList = 'calendar-header december-bg';
-            monthLabel.classList = 'december'
+            monthLabel.classList = 'month-label december'
         } else if (month == 'October') {
             calendarHeader.classList = 'calendar-header october-bg';
-            monthLabel.classList = 'october'
+            monthLabel.classList = 'month-label october'
         } else if (month == 'January') {
             calendarHeader.classList = 'calendar-header january-bg';
-            monthLabel.classList = 'january'
+            monthLabel.classList = 'month-label january'
         } else if (month == 'February') {
             calendarHeader.classList = 'calendar-header february-bg';
-            monthLabel.classList = 'february'
+            monthLabel.classList = 'month-label february'
         } else if (month == 'March') {
             calendarHeader.classList = 'calendar-header march-bg';
-            monthLabel.classList = 'march'
+            monthLabel.classList = 'month-label march'
         } else if (month == 'April') {
             calendarHeader.classList = 'calendar-header april-bg';
-            monthLabel.classList = 'april'
+            monthLabel.classList = 'month-label april'
         } else if (month == 'May') {
             calendarHeader.classList = 'calendar-header may-bg';
-            monthLabel.classList = 'april'
+            monthLabel.classList = ' month-label april'
         } else if (month == 'June') {
             calendarHeader.classList = 'calendar-header june-bg';
-            monthLabel.classList = 'june'
+            monthLabel.classList = 'month-label june'
         } else if (month == 'July') {
             calendarHeader.classList = 'calendar-header july-bg';
-            monthLabel.classList = 'july'
+            monthLabel.classList = 'month-label july'
         } else if (month == 'August') {
             calendarHeader.classList = 'calendar-header august-bg';
-            monthLabel.classList = 'august'
+            monthLabel.classList = 'month-label august'
         }
     }
 
