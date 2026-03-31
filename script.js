@@ -708,10 +708,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("current date before is", currentDate)
 
         // currentDate.setMonth(currentDate.getMonth() - 1);
-        currentDate.setDate(1);
-        currentDate.setMonth(currentDate.getMonth() - 1);
 
-        console.log("current date is", currentDate)
+        currentDate.setMonth(currentDate.getMonth() - 1);
 
         if (renderMonth == 0) {
             renderMonth = 11;
@@ -726,11 +724,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById("nextMonth").addEventListener("click", () => {
-        console.log("current date before is", currentDate)
         // currentDate.setMonth(currentDate.getMonth() + 1);
         currentDate.setDate(1);
         currentDate.setMonth(currentDate.getMonth() + 1);
-        console.log("current date is", currentDate)
+
         if (renderMonth == 11) {
             renderMonth = 0;
             renderYear += 1;

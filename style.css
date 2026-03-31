@@ -53,7 +53,7 @@ body {
     /* min-width: 250px; */
     line-height: 3rem;
     font-family: 'DM Serif Display', serif;
-    /* text-shadow: 1px 1px 4px rgb(2, 2, 51); */
+    text-shadow: 1px 1px 4px rgba(2, 2, 51, 0.817);
 }
 
 .year-label {
