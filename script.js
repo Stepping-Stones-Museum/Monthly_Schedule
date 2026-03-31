@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    let currentDate = new Date(); // November 2025 (month is 0-based)
+    let currentDate = new Date();
     const calendar = document.getElementById("calendar");
     function renderCalendar(date) {
         let differential = 3;
@@ -584,6 +584,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         "Birthday Party": { block: eventBlockMiddle, addTime: true, class: "birthday" },
                     };
 
+
+
                     // Look up the event type in the config
                     const config = eventConfig[todaysEvents[i].type];
 
@@ -620,25 +622,67 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // Mapping for Everyday Schedule
+
+            const everydaySchedule = {
+                weekday: {
+                    title: "Everyday Experiences",
+                    subtitle: "The Stage (Weekdays) The Theater (Weekends)",
+                    times: [
+                        ["10:30", "Music Experience"],
+                        ["11:00", "Puppet Variety Show"],
+                        ["11:15", "Storytelling Experience (Book Nook)"],
+                        ["12:00", "Mindful Experience"],
+                        ["1:00", "Music Experience"],
+                        ["2:00", "Puppet Variety Show"],
+                        ["3:00", "Storytelling Experience"],
+                        ["4:00", "Mindfulness Experience"],
+                    ]
+                },
+                weekend: {
+                    title: "Puppet Weekends",
+                    subtitle: "(The Theater unless noted)",
+                    times: [
+                        ["10:15", "Storytelling Experience (Book Nook)"],
+                        ["12:00", "Music Experience"],
+                        ["12:30", "Mindfulness Experience"],
+                        ["1:15", "Storytelling Experience (Book Nook)"],
+                        ["3:00", "Music Experience"],
+                        ["3:30", "Mindfulness Experience"],
+                        ["4:00", "Storytelling Experience (Book Nook)"],
+                        ["4:00", "Puppet Experience"],
+                    ]
+                }
+            };
+
+            function createScheduleDiv(schedule) {
+                const div = document.createElement("div");
+                div.classList.add("everyday-experience-container");
+
+                const items = schedule.times
+                    .map(([time, label]) => `<li><strong>${time}</strong> – ${label}</li>`)
+                    .join("");
+
+                div.innerHTML = `
+                  <h3>${schedule.title}</h3>
+                  <h4>${schedule.subtitle}</h4>
+                  <ul>${items}</ul>
+                `;
+
+                return div;
+            }
+
             if (firstDay < 2) {
-                if (day == daysInMonth + 1) {
-                    const everydayExperienceDiv = document.createElement("div");
-                    everydayExperienceDiv.classList.add("everyday-experience-container")
-                    everydayExperienceDiv.innerHTML = "<h3>Everyday Experiences</h3> <h4>The Stage (Weekdays) The Theater (Weekends)</h4><ul><li><strong>10:30</strong> – Music Experience</li><li><strong>11:00</strong> – Puppet Variety Show</li><li><strong>11:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Mindful Experience</li><li><strong>1:00 </strong>– Music Experience</li><li><strong>2:00 </strong>– Puppet Variety Show</li><li><strong>3:00 </strong>– Storytelling Experience</li><li><strong>4:00</strong> – Mindfulness Experience</li></ul>"
+                const scheduleKey = day === daysInMonth + 1 ? "weekday"
+                    : day === daysInMonth + 2 ? "weekend"
+                        : null;
 
-                    eventBlockTop.appendChild(everydayExperienceDiv);
-                    eventContainer.removeChild(eventBlockMiddle);
-                    eventContainer.removeChild(eventBlockBottom);
-                } else if (day == daysInMonth + 2) {
-                    const everydayExperienceDiv = document.createElement("div");
-                    everydayExperienceDiv.classList.add("everyday-experience-container")
-                    everydayExperienceDiv.innerHTML = "<h3>Puppet Weekends</h3> <h4>(The Theater unless noted)</h4><ul><li><strong>10:15</strong> – Storytelling Experience (Book Nook)</li><li><strong>12:00</strong> – Music Experience</li><li><strong>12:30</strong> – Mindfulness Experience</li><li><strong>1:15 </strong>– Storytelling Experience (Book Nook)</li><li><strong>3:00 </strong>– Music Experience</li><li><strong>3:30 </strong>– Mindfulness Experience</li><li><strong>4:00</strong> – Storytelling Experience (Book Nook)</li><li><strong>4:00</strong> – Puppet Experience</li></ul>"
-
-                    eventBlockTop.appendChild(everydayExperienceDiv);
-
+                if (scheduleKey) {
+                    eventBlockTop.appendChild(createScheduleDiv(everydaySchedule[scheduleKey]));
                     eventContainer.removeChild(eventBlockMiddle);
                     eventContainer.removeChild(eventBlockBottom);
                 }
+
                 calendar.appendChild(dayCell);
             } else if (day <= daysInMonth) {
                 calendar.appendChild(dayCell);
@@ -657,8 +701,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
     document.getElementById("prevMonth").addEventListener("click", () => {
+        console.log("current date before is", currentDate)
+
+        // currentDate.setMonth(currentDate.getMonth() - 1);
+        currentDate.setDate(1);
         currentDate.setMonth(currentDate.getMonth() - 1);
+
+        console.log("current date is", currentDate)
+
         if (renderMonth == 0) {
             renderMonth = 11;
             renderYear -= 1;
@@ -672,8 +726,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById("nextMonth").addEventListener("click", () => {
+        console.log("current date before is", currentDate)
+        // currentDate.setMonth(currentDate.getMonth() + 1);
+        currentDate.setDate(1);
         currentDate.setMonth(currentDate.getMonth() + 1);
-
+        console.log("current date is", currentDate)
         if (renderMonth == 11) {
             renderMonth = 0;
             renderYear += 1;

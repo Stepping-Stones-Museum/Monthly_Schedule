@@ -27,6 +27,7 @@ body {
     background-color: rgb(39, 164, 227);
     background-image: url("./assets/snow-bg.webp");
     background-size: auto 100%;
+
 }
 
 .month-label-container {
@@ -45,14 +46,14 @@ body {
     /* padding: 5px 10px; */
     height: 100%;
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 15px;
     text-transform: uppercase;
     text-align: left;
     /* min-width: 250px; */
     line-height: 3rem;
     font-family: 'DM Serif Display', serif;
-    text-shadow: 1px 1px 4px rgb(2, 2, 51);
+    /* text-shadow: 1px 1px 4px rgb(2, 2, 51); */
 }
 
 .year-label {
@@ -106,48 +107,6 @@ body {
     transition: background 0.15s;
     backdrop-filter: blur(5px);
   }
-/* ---------------------------   Cal Header -----------------------------  */
-
-
-/* ---------------------------   Cal Header -----------------------------  */
-
-
-
-/* ---------------------------   Cal Header -----------------------------  */
-
-
-.desktop-container   {
-    display: none;
-}
-
-.toggle-containers-section {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.monthly-calendar-section {
-    display: block;
-    height: 100%;
-}
-
-.weekday-labels {
-    background: black;
-}
-
-.weekday-labels div {
-    color: white;
-    padding: 5px 0px;
-    font-size: 12px;
-}
-
-.daily-calendar-section {
-    display: none;
-}
-
-
-
-
 
 
 .october-bg {
@@ -215,6 +174,62 @@ background-color: rgb(0 52 78);
     /* background-size: 65px; */
 }
 
+
+/* ---------------------------   Cal Cells -----------------------------  */
+/* -------------------   Base Styling  ---------------------  */
+
+.empty {
+    position: relative;
+    background-color: #f8f7f4;
+    overflow: hidden;
+  }
+  
+.empty::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("./assets/unicorn.webp") center/contain no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-size: cover;
+}
+  
+.empty:hover::after {
+    opacity: 1;
+}
+
+
+
+.desktop-container   {
+    display: none;
+}
+
+.toggle-containers-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.monthly-calendar-section {
+    display: block;
+    height: 100%;
+}
+
+.weekday-labels {
+    background: #eeedea;
+}
+
+.weekday-labels div {
+    color: rgb(25, 25, 25);
+    padding: 5px 0px;
+    font-size: 12px;
+}
+
+.daily-calendar-section {
+    display: none;
+}
+
+
 .day {
     border: 0.5px solid #868686;
     min-height: 75px;
@@ -237,6 +252,7 @@ background-color: rgb(0 52 78);
     text-align: left;
     font-size: 0.75rem;
     position: absolute;
+
 }
 
 .background-logo {
@@ -271,6 +287,7 @@ background-color: rgb(0 52 78);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 .day-events-block {
@@ -405,24 +422,7 @@ background-color: rgb(0 52 78);
     background: #d7b3fb;
 }
 
-.empty {
-    position: relative;
-    background-color: white;
-    overflow: hidden;
-  }
-  
-  .empty::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("./assets/unicorn.webp") center/contain no-repeat;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .empty:hover::after {
-    opacity: 1;
-  }
+
   
   
 
@@ -538,7 +538,7 @@ table {
 /* Table cells */
 th,
 td {
-    border: 1px solid #ccc;
+    border: 1px solid #cecdcb;
     padding: 5px;
     text-align: center;
     max-width: 200px;
@@ -558,6 +558,7 @@ th {
 /* Containers for events inside table cells */
 .event-div {
     margin: 7px 0px;
+    border: 1px solid #cecdcb;
 }
 
 .everyday-experience-container {
@@ -568,6 +569,7 @@ th {
     overflow: scroll;
     width: 100%;
     position: relative; */
+    background-color:#f8f7f4;
 }
 
 .everyday-experience-container h3 {
