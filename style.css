@@ -575,15 +575,20 @@ th {
     border: 1px solid #cecdcb;
 }
 
+.everyday-experience-container-bg {
+    background-color:#f8f7f4;
+    height: 100%;
+}
+
 .everyday-experience-container {
     /* border: 0.5px solid #868686;
     min-height: 75px;
     display: flex;
     flex-direction: column;
     overflow: scroll;
-    width: 100%;
     position: relative; */
     background-color:#f8f7f4;
+    width: 100%;
 }
 
 .everyday-experience-container h3 {

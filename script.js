@@ -678,6 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         : null;
 
                 if (scheduleKey) {
+                    eventBlockTop.classList.add("everyday-experience-container-bg")
                     eventBlockTop.appendChild(createScheduleDiv(everydaySchedule[scheduleKey]));
                     eventContainer.removeChild(eventBlockMiddle);
                     eventContainer.removeChild(eventBlockBottom);
