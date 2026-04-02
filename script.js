@@ -702,8 +702,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    // Toggle Month Logic
+    const seasonLabel = document.querySelector(".season-label");
+    function changeSeasonLabel(month) {
+        if (month >= 2 && month <= 4) {
+            seasonLabel.innerText = "Spring";
+        } else if (month >= 5 && month <= 7) {
+            seasonLabel.innerText = "Summer";
+        } else if (month >= 8 && month <= 10) {
+            seasonLabel.innerText = "Fall";
+        } else {
+            seasonLabel.innerText = "Winter";
+        }
+    }
 
-
+    // Previous Month toggle
     document.getElementById("prevMonth").addEventListener("click", () => {
         console.log("current date before is", currentDate)
 
@@ -717,12 +730,15 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             renderMonth -= 1;
         }
+
+
         fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}${years[renderYear]}.json`;
         fetchWithUrl(fetchUrl);
         changeHeadingBg(months[renderMonth]);
         // renderCalendar(currentDate);
     });
 
+    // Next month toggle
     document.getElementById("nextMonth").addEventListener("click", () => {
         // currentDate.setMonth(currentDate.getMonth() + 1);
         currentDate.setDate(1);
@@ -735,12 +751,14 @@ document.addEventListener('DOMContentLoaded', () => {
             renderMonth += 1;
         }
 
+
         fetchUrl = `https://ssmc-daily-schedule-default-rtdb.firebaseio.com/${months[renderMonth]}${years[renderYear]}.json`;
         fetchWithUrl(fetchUrl);
         changeHeadingBg(months[renderMonth]);
         // renderCalendar(currentDate);
     });
 
+    // Change styling of Header based on month as well as seasona
     function changeHeadingBg(month) {
         calendarHeader.classList = 'calendar-header';
         // const monthLabel = document.getElementById('monthLabel')
@@ -793,6 +811,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderAllSchedules(chosenMonth, chosenDay);
                 renderCalendar(currentDate);
                 changeHeadingBg(months[renderMonth]);
+                changeSeasonLabel(renderMonth)
                 console.log(currentDate)
                 console.log("Rendered Info", allEvents)
             })
