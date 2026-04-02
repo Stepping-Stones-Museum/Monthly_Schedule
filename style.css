@@ -358,8 +358,8 @@ background-color: rgb(0 52 78);
 
 .block-single.holiday {
     order: 1;
-    color: black;
     font-weight: bold;
+    color: white;
 }
 
 .event.holiday {
@@ -384,8 +384,7 @@ background-color: rgb(0 52 78);
 .block-single.facility-rental {
     order: 2;
     color: black;
-
-
+    color: white;
 }
 
 .block-single.birthday {
