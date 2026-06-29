@@ -810,49 +810,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchWithUrl(fetchUrl)
 
-    // function fetchWithUrl(urlData) {
-    //     fetch(urlData)
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             allEvents = Object.values(data);
-    //             renderAllSchedules(chosenMonth, chosenDay);
-    //             renderCalendar(currentDate);
-    //             changeHeadingBg(months[renderMonth]);
-    //             changeSeasonLabel(renderMonth)
-    //             console.log(currentDate)
-    //             console.log("Rendered Info", allEvents)
-    //         })
-    //         .catch((err) => {
-    //             console.error("Failed to fetch schedule data:", err);
-    //         });
-    // }
-
-    async function fetchWithUrl(urlData) {
-        // 1. Get anonymous token silently
-        const authRes = await fetch(
-            `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyADaInXXmr2q_ZDflvaHyl8LtZ6HX3ppDE`,
-            { method: "POST", body: JSON.stringify({ returnSecureToken: true }) }
-        );
-        const { idToken } = await authRes.json();
-
-        // 2. Fetch your data with the token appended
-        fetch(`${urlData}?auth=${idToken}`)
+    function fetchWithUrl(urlData) {
+        fetch(urlData)
             .then((res) => res.json())
             .then((data) => {
                 allEvents = Object.values(data);
-                changeHeadingBg(months[renderMonth]);
-                changeSeasonLabel(renderMonth);
-                renderCalendar(currentDate);
                 renderAllSchedules(chosenMonth, chosenDay);
-
-
-                console.log(currentDate);
-                console.log("Rendered Info", allEvents);
+                renderCalendar(currentDate);
+                changeHeadingBg(months[renderMonth]);
+                changeSeasonLabel(renderMonth)
+                console.log(currentDate)
+                console.log("Rendered Info", allEvents)
             })
             .catch((err) => {
                 console.error("Failed to fetch schedule data:", err);
             });
     }
+
+    // async function fetchWithUrl(urlData) {
+    //     // 1. Get anonymous token silently
+    //     const authRes = await fetch(
+    //         `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=`,
+    //         { method: "POST", body: JSON.stringify({ returnSecureToken: true }) }
+    //     );
+    //     const { idToken } = await authRes.json();
+
+    //     // 2. Fetch your data with the token appended
+    //     fetch(`${urlData}?auth=${idToken}`)
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             allEvents = Object.values(data);
+    //             changeHeadingBg(months[renderMonth]);
+    //             changeSeasonLabel(renderMonth);
+    //             renderCalendar(currentDate);
+    //             renderAllSchedules(chosenMonth, chosenDay);
+
+
+    //             console.log(currentDate);
+    //             console.log("Rendered Info", allEvents);
+    //         })
+    //         .catch((err) => {
+    //             console.error("Failed to fetch schedule data:", err);
+    //         });
+    // }
 
     const monthlyCalendarSection = document.querySelector(".monthly-calendar-section")
     const dailyCalendarSection = document.querySelector(".daily-calendar-section")
