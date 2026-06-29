@@ -799,7 +799,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (month == 'September') {
             calendarHeader.classList = 'calendar-header september-bg';
             monthLabel.classList = 'month-label september'
+
         }
+
+        monthLabel.innerText = month
     }
 
 
@@ -837,10 +840,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .then((res) => res.json())
             .then((data) => {
                 allEvents = Object.values(data);
-                renderAllSchedules(chosenMonth, chosenDay);
-                renderCalendar(currentDate);
                 changeHeadingBg(months[renderMonth]);
                 changeSeasonLabel(renderMonth);
+                renderCalendar(currentDate);
+                renderAllSchedules(chosenMonth, chosenDay);
+
+
                 console.log(currentDate);
                 console.log("Rendered Info", allEvents);
             })
