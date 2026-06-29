@@ -797,7 +797,7 @@ document.addEventListener('DOMContentLoaded', () => {
             calendarHeader.classList = 'calendar-header august-bg';
             monthLabel.classList = 'month-label august'
         } else if (month == 'September') {
-            calendarHeader.classList = 'calendar-header august-bg';
+            calendarHeader.classList = 'calendar-header september-bg';
             monthLabel.classList = 'month-label september'
         }
     }
